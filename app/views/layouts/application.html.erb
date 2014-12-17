@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PaperclipSimpleFormBootstrapExample</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Static navbar -->
+  <div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <%= link_to 'Paperclip-Simple Form-Bootstrap', root_path, class: 'navbar-brand' %>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><%= link_to 'Home', root_path %></li>
+          <li><%= link_to 'New User', new_user_path %></li>
+        </ul>
+        <div class="navbar-text navbar-right">
+        </div>
+      </div><!--/.nav-collapse -->
+    </div><!--/.container-fluid -->
+  </div>
+
+  <%- if notice %>
+    <div class="alert alert-info"><%= notice %></div>
+  <%- end %>
+  <%- if alert %>
+    <div class="alert alert-warning"><%= alert %></div>
+  <%- end %>
+
+  <%= yield %>
+  <br>
+
+</div> <!-- /container -->
+
+
+</body>
+</html>
